@@ -5,6 +5,12 @@ Para usá-lo baso importar com a tag script assim.
 ```html
 <script src="https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/tooltip_conscienciologico.js"></script>
 
+```html
+
+html```
+html´´´
+
+´´´html
 
 
 
