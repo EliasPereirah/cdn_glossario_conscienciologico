@@ -51,7 +51,7 @@ function loadTippyCDN(callback) {
         {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
         {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
         {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
-        ### /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
     ];
 ```
 
