@@ -7,12 +7,12 @@ Para usá-lo baso importar com a tag script assim.
 ```
 
 ## Configurações
-Caso queira mudar a cor da "caixinha" bastar adicionar antes do script acima, esse outro:
+Caso queira mudar a cor da "caixinha" basta adicionar antes do script informado, esse outro:
 
 ```html
-<script type="372bf046ffb942f9424bbb9c-text/javascript">
+<script>
       var tooltip_config = {
-             theme: 'default', /* light or default(black) */
+             theme: 'default', /* light para branco ou default para escuro */
              font_size: '18px'
          }
     </script>
