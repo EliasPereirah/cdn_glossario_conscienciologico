@@ -1,16 +1,15 @@
 /**
  * Este script é uma ferramenta para adicionar caixas interativas com definições de termos Conscienciológicos
  * a qualquer site na internet.
- * Ele irá identificar os neologismos e adicionar uma caixa com o significado sempre o usuário passar o mouse sobre o 
+ * Ele irá identificar os neologismos e adicionar uma caixa com o significado sempre o usuário passar o mouse sobre o
  * termo.
- * Ele usa Tippy.js (https://unpkg.com/tippy.js@6) e Popper.js (https://unpkg.com/@popperjs/core@2) para implementar 
+ * Ele usa Tippy.js (https://unpkg.com/tippy.js@6) e Popper.js (https://unpkg.com/@popperjs/core@2) para implementar
  * as dicas de ferramentas ambos com lincença MIT
  * O projeto Tippy.js pode ser encontrado em https://atomiks.github.io/tippyjs/.
  * O projeto Popper.js pode ser encontrado em https://popper.js.org/.
  * Entre em contato com o autor (Elias Pereira) em https://taxologia.com/contato se tiver alguma dúvida ou sugestão.
  *
  */
-
 
 function highlightTooltip(element, words_keys, theme) {
     let regex = new RegExp('\\b(' + words_keys.join('|') + ')\\b', 'i');
@@ -172,9 +171,9 @@ function makeLightThemeAvailable(){
 
 
  window.addEventListener('load', () => {
-        if(tooltip_config == null){
+        if(typeof tooltip_config === "undefined"){
              tooltip_config = {
-                theme: 'light',
+                theme: 'default',
                 font_size: '18px'
             }
         }
