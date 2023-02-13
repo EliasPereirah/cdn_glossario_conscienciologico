@@ -4,16 +4,21 @@ Esse script irá automaticamente importar um arquivo glossário de mais de quase
 Para usá-lo baso importar com a tag script assim.
 ```html
 <script src="https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/tooltip_conscienciologico.js"></script>
-html´´´
+
+
+
 
 ## Configurações
 Caso queira mudar a cor da "caixinha" bastar adicionar antes do script acima, esse outro:
 
-´´´html
+
+
+```html
 <script type="372bf046ffb942f9424bbb9c-text/javascript">
       var tooltip_config = {
              theme: 'default', /* light or default(black) */
              font_size: '18px'
          }
     </script>
-    html```
+
+
