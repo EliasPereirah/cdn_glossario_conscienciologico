@@ -22,7 +22,7 @@ Caso queira mudar a cor da "caixinha" ou o tamanho da fonte basta adicionar <b>a
 ```
 
 ## CDN
-Esse script irá importar mais três arquivos disponibilizados em CDN.
+Esse script irá de forma automática importar mais três scripts disponibilizados em CDN.
 
 Tippy.js (https://unpkg.com/tippy.js@6)
 
