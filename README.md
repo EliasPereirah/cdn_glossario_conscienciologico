@@ -32,6 +32,7 @@ E o arquivo com os neologismos em forma de array JavaScript (https://cdn.jsdeliv
 
 ## Conscienciologia
 O foco desse script é bem especifíco(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
+
 No entanto a lógica aqui poderá ser usada em qualquer oturo site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
 ```javascript
 words = {
@@ -41,7 +42,7 @@ words = {
 }
 ```
 
-Se assim desejar vai precisar modificar a seguinte parte do código em o código em This site was built using [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
+Se assim desejar vai precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
 
 ```html
 function loadTippyCDN(callback) {
@@ -50,7 +51,7 @@ function loadTippyCDN(callback) {
         {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
         {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
         {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
-        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+        <b><i>/// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ </i></b>
     ];
 ```
 
