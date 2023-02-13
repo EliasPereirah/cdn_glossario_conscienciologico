@@ -44,7 +44,7 @@ words = {
 
 Se assim desejar vai precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
 
-```html
+```javascript
 function loadTippyCDN(callback) {
     /* the order is important */
     const all_scripts = [
