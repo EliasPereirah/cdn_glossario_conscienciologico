@@ -23,5 +23,7 @@ Caso queira mudar a cor da "caixinha" ou o tamanho da fonte basta adicionar <b>a
 Esse script irá importar mais três arquivos disponibilizados em CDN.
 
 Tippy.js (https://unpkg.com/tippy.js@6)
+
 Popper.js (https://unpkg.com/@popperjs/core@2)
+
 E o arquivo com os neologismos em forma de array JavaScript (https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js)
