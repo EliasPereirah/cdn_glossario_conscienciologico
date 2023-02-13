@@ -4,7 +4,7 @@ Esse script permite que você tenha em seu site a funcionalidade de tooltip que 
 
 Esse script irá automaticamente importar um arquivo glossário de quase 500 definições de neologismos da Conscienciologia.
 
-Para usá-lo baso importar com a tag script assim.
+Para usá-lo basta importar com a tag script assim.
 ```html
 <script src="https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/tooltip_conscienciologico.js"></script>
 ```
@@ -51,7 +51,7 @@ function loadTippyCDN(callback) {
         {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
         {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
         {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
-        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+        ### /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
     ];
 ```
 
