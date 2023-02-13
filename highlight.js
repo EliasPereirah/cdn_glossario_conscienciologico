@@ -1,22 +1,14 @@
 /**
- * This script is a tool for adding interactive tooltips to any HTML element on a web page.
- * It uses Tippy.js (https://unpkg.com/tippy.js@6) and Popper.js (https://unpkg.com/@popperjs/core@2) to implement the tooltips.
+ * Este script é uma ferramenta para adicionar caixas interativas com definições de termos Conscienciológicos
+ * a qualquer site na internet.
+ * Ele irá identificar os neologismos e adicionar uma caixa com o significado sempre o usuário passar o mouse sobre o 
+ * termo.
+ * Ele usa Tippy.js (https://unpkg.com/tippy.js@6) e Popper.js (https://unpkg.com/@popperjs/core@2) para implementar 
+ * as dicas de ferramentas ambos com lincença MIT
+ * O projeto Tippy.js pode ser encontrado em https://atomiks.github.io/tippyjs/.
+ * O projeto Popper.js pode ser encontrado em https://popper.js.org/.
+ * Entre em contato com o autor (Elias Pereira) em https://taxologia.com/contato se tiver alguma dúvida ou sugestão.
  *
- * To use this script, simply add the `data-tippy` attribute to any HTML element you want to have a tooltip,
- * and specify the content of the tooltip as the value of the attribute. For example:
- *
- * <button data-tippy="Hello, world!">Hover over me</button>
- *
- * The script will automatically detect all elements with the `data-tippy` attribute and create tooltips for them.
- *
- * This script is free to use and modify, and is licensed under the MIT license. The Tippy.js project is also
- * licensed under the MIT license, and can be found at https://atomiks.github.io/tippyjs/. The Popper.js project
- * is also licensed under the MIT license, and can be found at https://popper.js.org/.
- *
- * Contact the author (Elias Pereira) at https://taxologia.com/contato if you have any questions or feedback.
- *
- * Compatibility: This script has been tested in recent versions of Google Chrome, Mozilla Firefox, and Apple Safari.
- * It may work in other browsers as well, but has not been extensively tested in all environments.
  */
 
 
