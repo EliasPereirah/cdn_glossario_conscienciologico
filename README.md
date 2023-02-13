@@ -37,8 +37,8 @@ No entanto a lógica aqui poderá ser usada em qualquer oturo site que deseje ad
 ```javascript
 words = {
 "Consciência":"Definição de consciência aqui",
-"Amizaade":"Definição de amizade aqui",
-"Debian Linux":"Definição de Debian Linux aqui"
+"Amizade":"Definição de amizade aqui",
+"Filme Matrix":"Definição de filme Matrix aqui"
 }
 ```
 
