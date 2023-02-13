@@ -33,7 +33,7 @@ E o arquivo com os neologismos em forma de array JavaScript (https://cdn.jsdeliv
 ## Conscienciologia
 O foco desse script é bem especifíco(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
 No entanto a lógica aqui poderá ser usada em qualquer oturo site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
-``javascript
+```javascript
 words = {
 "Consciência":"Definição de consciência aqui",
 "Amizaade":"Definição de amizade aqui",
