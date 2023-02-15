@@ -31,9 +31,9 @@ Popper.js (https://unpkg.com/@popperjs/core@2)
 E o arquivo com os neologismos em forma de array JavaScript (https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js)
 
 ## Conscienciologia
-O foco desse script é bem especifíco(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
+O foco desse script é bem específico(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
 
-No entanto a lógica aqui poderá ser usada em qualquer oturo site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
+No entanto a lógica aqui poderá ser usada em qualquer outro site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
 ```javascript
 words = {
 "Consciência":"Definição de consciência aqui",
