@@ -8,7 +8,6 @@ Para usá-lo basta importar com a tag script assim.
 ```html
 <script src="https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/tooltip_conscienciologico.js"></script>
 ```
-
 ## Configurações
 Caso queira mudar a cor da "caixinha" ou o tamanho da fonte basta adicionar <b>antes</b> do script informado, esse outro:
 
@@ -54,4 +53,25 @@ function loadTippyCDN(callback) {
         /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
     ];
 ```
+# Alternativa sem CDN
+Se não desejar usar CDN e importar o código diretamente no seu site. Faça o sequinte:
 
+Copie o seguinte script para a raiz do seu site ou um diretório de sua preferência https://unpkg.com/@popperjs/core@2 salve com o nome popper.js
+
+Copie também o script https://unpkg.com/tippy.js@6 com o nome tippy.js
+
+Copie também https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js com o nome termos_conscienciologicos.js
+
+Copie também o arquivo nesse respositório com o nome [tooltip_conscienciologico.js] e salve com o nome tooltip_conscienciologico.js , nesse arquivo você vai precisar fazer a alteração dos links dentro do array nomeado `all_script` dentro da function `loadTippyCDN` apontando agora agora para seu própio site.
+
+Um exemplo de como ficaria:
+
+```javascript
+    // ......
+    const all_scripts = [
+        {src: 'https://seusite.com/popper.js', log: 'Popper.js loaded'},
+        {src: 'https://seusite.com/tippy.js', log: 'Tippy.js loaded'},
+        {src: 'https://seusite.com/termos_conscienciologicos.js', log: 'Glossary loaded'}
+    ];
+   //.......
+```
