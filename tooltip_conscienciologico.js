@@ -124,7 +124,7 @@ function loadTippyCDN(callback) {
 
 
 function initHL(theme) {
-    const selectors = [
+    /*const selectors = [
         '#main',
         '.main',
         'main',
@@ -135,7 +135,11 @@ function initHL(theme) {
         '#container',
         '.container',
         '[role="main"]'
-    ];
+    ];*/
+    
+    const selectors = [
+        'body'
+    ]
 
     const content = selectors.reduce((selected, selector) => {
         return selected || document.querySelector(selector);
