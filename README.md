@@ -29,30 +29,6 @@ Popper.js (https://unpkg.com/@popperjs/core@2)
 
 E o arquivo com os neologismos em forma de array JavaScript (https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js)
 
-## Conscienciologia
-O foco desse script é bem específico(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
-
-No entanto a lógica aqui poderá ser usada em qualquer outro site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
-```javascript
-words = {
-"Consciência":"Definição de consciência aqui",
-"Amizade":"Definição de amizade aqui",
-"Filme Matrix":"Definição de filme Matrix aqui"
-}
-```
-
-Se assim desejar vai precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
-
-```javascript
-function loadTippyCDN(callback) {
-    /* the order is important */
-    const all_scripts = [
-        {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
-        {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
-        {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
-        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-    ];
-```
 # Alternativa sem CDN
 Se não desejar usar CDN e importar o código diretamente no seu site. Faça o sequinte:
 
@@ -82,3 +58,27 @@ Feito isso tudo que precisará para funcionar é importar agora um único script
 <script src="https://seusite.com/tooltip_conscienciologico.js"></script>
 ```
 
+## Conscienciologia
+O foco desse script é bem específico(sites conscienciológicos), outros sites não vão se beneficiar em usá-lo
+
+No entanto a lógica aqui poderá ser usada em qualquer outro site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
+```javascript
+words = {
+"Consciência":"Definição de consciência aqui",
+"Amizade":"Definição de amizade aqui",
+"Filme Matrix":"Definição de filme Matrix aqui"
+}
+```
+
+Se assim desejar vai precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
+
+```javascript
+function loadTippyCDN(callback) {
+    /* the order is important */
+    const all_scripts = [
+        {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
+        {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
+        {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
+        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+    ];
+```
