@@ -62,7 +62,7 @@ Copie também o script https://unpkg.com/tippy.js@6 com o nome tippy.js
 
 Copie também https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js com o nome termos_conscienciologicos.js
 
-Copie também o arquivo nesse respositório com o nome [tooltip_conscienciologico.js] e salve com o nome tooltip_conscienciologico.js , nesse arquivo você vai precisar fazer a alteração dos links dentro do array nomeado `all_script` dentro da function `loadTippyCDN` apontando agora agora para seu própio site.
+Copie também o arquivo nesse respositório com o nome [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js)  e salve com o nome tooltip_conscienciologico.js , nesse arquivo você vai precisar fazer a alteração dos links dentro do array nomeado `all_script` dentro da function `loadTippyCDN` apontando agora agora para seu própio site.
 
 Um exemplo de como ficaria:
 
@@ -75,3 +75,10 @@ Um exemplo de como ficaria:
     ];
    //.......
 ```
+
+Feito isso tudo que precisará para funcionar é importar agora um único script em seu site, os outros serão importados de forma automática. Segue o exemplo.
+
+```html
+<script src="https://seusite.com/tooltip_conscienciologico.js"></script>
+```
+
