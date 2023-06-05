@@ -16,7 +16,7 @@ function highlightTooltip(element, words_keys, theme) {
     // Faz uma busca pelas palavras-chave no elemento inteiro
     let iterator = document.createNodeIterator(element, NodeFilter.SHOW_TEXT, {
         acceptNode: function (node) {
-            if (node.parentNode.nodeName === 'SCRIPT' || node.parentNode.nodeName === 'IFRAME') {
+            if (node.parentNode.nodeName === 'SCRIPT' || node.parentNode.nodeName === 'IFRAME' || node.parentNode.nodeName === 'A' || node.parentNode.nodeName === 'STYLE') {
                 return NodeFilter.FILTER_REJECT;
             }
             return regex.test(node.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
@@ -168,6 +168,14 @@ function makeLightThemeAvailable(){
 }
 
 
+function makeAliceThemeAvailable(){
+    let alice_theme = `.tippy-box[data-theme~=alice]{color:#26323d;box-shadow:0px 0px 4px 0px #2011e7;background-color:aliceblue;}.tippy-box[data-theme~=light][data-placement^=top]>.tippy-arrow:before{border-top-color:#fff}.tippy-box[data-theme~=light][data-placement^=bottom]>.tippy-arrow:before{border-bottom-color:#fff}.tippy-box[data-theme~=light][data-placement^=left]>.tippy-arrow:before{border-left-color:#fff}.tippy-box[data-theme~=light][data-placement^=right]>.tippy-arrow:before{border-right-color:#fff}.tippy-box[data-theme~=light]>.tippy-backdrop{background-color:#fff}.tippy-box[data-theme~=light]>.tippy-svg-arrow{fill:#fff}`;
+    const style = document.createElement('style');
+    style.innerHTML = alice_theme;
+    document.head.appendChild(style);
+}
+
+
 
 
  window.addEventListener('load', () => {
@@ -179,6 +187,7 @@ function makeLightThemeAvailable(){
         }
         rewriteTippyCss(tooltip_config.font_size);
         makeLightThemeAvailable();
+        makeAliceThemeAvailable();
         loadTippyCDN(() => {
             initHL(tooltip_config.theme);
 
