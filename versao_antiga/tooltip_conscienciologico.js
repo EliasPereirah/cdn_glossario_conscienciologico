@@ -8,7 +8,6 @@
  * O projeto Tippy.js pode ser encontrado em https://atomiks.github.io/tippyjs/.
  * O projeto Popper.js pode ser encontrado em https://popper.js.org/.
  * Entre em contato com o autor (Elias Pereira) em https://taxologia.com/contato se tiver alguma dúvida ou sugestão.
- *
  */
 
 function highlightTooltip(element, words_keys, theme) {
