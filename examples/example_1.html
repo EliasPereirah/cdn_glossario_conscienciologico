@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // Configura cor de fundo e tamanho de fonte
+        var tooltip_config = {
+            theme: 'light',
+            font_size: '18px',
+            target_element: 'body' // elemento principal onde será aplicado os tooltips (body é o padrão)
+            // pode ser main, html, div #id .class ou qualquer outro
+            // é interesste mudar isso para que pegue apenas a parte do artigo do site/blog, em alguns casos main ou article será o ideal
+
+        }
+    </script>
+
+    <script>
+        // apenas caso queira adicionar novas palavras além das que estão em termos_conscienciologicos.js
+        // as keys/chaves do array que tiver mais palavras devem ser colocadas na frente.
+        // exemplo em vez de colocar primeiro "amparador" e depois "amparador extrafísico", coloque primeiro o "amparador extrafísico"
+        // do contrário caso apareça um "amparador extrafísico" no texto sérá destacado apenas a definição de "amparador" por aparecer primeiro
+
+        var tooltip_new_definitions = {
+            "projeção com mentalsoma" : "Esse é um exemplo de adição de nova palavra",
+            "palavrexemplo" : " Esse é um exemplo de palavra nova"
+        }
+
+    </script>
+     <!-- Importa o script em CDN. se preferir pode copiar o script para o próprio site (ler o README.md) -->
+    <script src="https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/tooltip_conscienciologico.js"></script>
+</head>
+<body>
+<div class="example">
+    <p>
+        <strong>Projeção com Mentalsoma</strong>    A projeção de mentalsoma é a experiência, da consciência intrafisíca ou extrafísica, deixar o psicossoma incapacitado e sair projetada pelo mentalsoma, na dimensão mentalsomática."
+
+    </p>
+    <p><strong>Projeciologia</strong>
+        A projeciologia (do latim projectio significa projeção e logos no grego significa tratado) é o ramo de caráter
+        mais prático da conscienciologia.
+    </p>
+    <p>
+        <em>Tenepes</em>
+        O neologismo foi criado por Waldo Vieira em 1966. A Tenepes (acrônimo de tarefa energética pessoal também conhecida pelos espíritas como passe para o escuro ou sessão do eu sozinho, é uma técnica assistencial que, consiste na transmissão de bioenergias espirituais para fins assistenciais.
+    </p>
+    <p>
+       <b>Homo sapiens serenissimus</b>
+        Homo sapiens serenissimus ou serenão é nome dado por Vieira às consciências que atingiram o mais alto grau de evolução na vida terrestre. Ao final dessa última vida intrafísica ele passa a condição de consciência livre.
+    </p>
+    <p>
+        <strong>Palavrexemplo</strong>
+          Adição de nova palavra palavrexemplo
+    </p>
+</div>
+</body>
+</html>

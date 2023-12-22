@@ -11,31 +11,14 @@
  *
  */
 
-
-
-function isTagA(elemento) {
-    return elemento.tagName === 'A';
-}
-
-function estaAninhadoEmTagA(elemento) {
-    var pai = elemento.parentElement;
-    while (pai !== null) {
-        if (isTagA(pai)) {
-            return true;
-        }
-        pai = pai.parentElement;
-    }
-    return false;
-}
-
 function highlightTooltip(element, words_keys, theme) {
     let regex = new RegExp('\\b(' + words_keys.join('|') + ')\\b', 'i');
-    let accepted_nodes = ['DIV','SPAN','ARTICLE','P','I','B','EM','STRONG','MAIN','BLOCKQUOTE','BODY','HTML','SECTION','TABLE','TD','TH','TBODY'];
+    // Faz uma busca pelas palavras-chave no elemento inteiro
     let iterator = document.createNodeIterator(element, NodeFilter.SHOW_TEXT, {
         acceptNode: function (node) {
-            if (!accepted_nodes.includes(node.parentNode.nodeName)) {
-                 return NodeFilter.FILTER_REJECT;
-             }
+            if (node.parentNode.nodeName === 'SCRIPT' || node.parentNode.nodeName === 'IFRAME' || node.parentNode.nodeName === 'A' || node.parentNode.nodeName === 'STYLE') {
+                return NodeFilter.FILTER_REJECT;
+            }
             return regex.test(node.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
         }
 
@@ -45,10 +28,6 @@ function highlightTooltip(element, words_keys, theme) {
     let node;
     while (node = iterator.nextNode()) {
         let parent = node.parentNode;
-       if (estaAninhadoEmTagA(parent)) {
-            // evita links
-            continue;
-        }
         let text = node.textContent;
         let class_name;
 
@@ -81,34 +60,13 @@ function highlightTooltip(element, words_keys, theme) {
     const highlightedWords = document.getElementsByClassName("highlighted-word");
     let cnt;
     for (const word of highlightedWords) {
-        cnt = tooltip_words_definitions[word.innerText.trim().toLocaleLowerCase()];
-        let wm = word.innerText.charAt(0).toUpperCase() +"<space></space>"+ word.innerText.slice(1);
-        cnt = `<strong>${wm}:</strong> ${cnt}`;
+        cnt = words[word.innerText.trim().toLocaleLowerCase()];
         tippy(word, {
             content: cnt,
             trigger: 'mouseenter',
             theme: theme,
             interactive: true,
             appendTo: document.body,
-            allowHTML: true,
-             popperOptions: {
-                    strategy: 'fixed',
-                    modifiers: [
-                      {
-                        name: 'flip',
-                        options: {
-                          fallbackPlacements: ['bottom', 'right'],
-                        },
-                      },
-                      {
-                        name: 'preventOverflow',
-                        options: {
-                          altAxis: true,
-                          tether: false,
-                        },
-                      },
-                    ],
-                  }
         });
 
     }
@@ -116,46 +74,6 @@ function highlightTooltip(element, words_keys, theme) {
 }
 
 
-
-function addVer(ele){
-    tippy(ele, {
-        content: tooltip_words_definitions[ele.innerText.toLowerCase()],
-        theme: 'light',
-        trigger: 'mouseenter',
-        interactive: true,
-        appendTo: document.body,
-        allowHTML: true,
-        popperOptions: {
-            strategy: 'fixed',
-            modifiers: [
-                {
-                    name: 'flip',
-                    options: {
-                        fallbackPlacements: ['bottom', 'right'],
-                    },
-                },
-                {
-                    name: 'preventOverflow',
-                    options: {
-                        altAxis: true,
-                        tether: false,
-                    },
-                },
-            ],
-        }
-    });
-
-    let eventMouseEnter = new MouseEvent('mouseenter', {
-        bubbles: true,
-        cancelable: true,
-        view: window
-    });
-
-    ele.dispatchEvent(eventMouseEnter);
-    ele.onclick =()=>{
-        return false;
-    }
-}
 function removeRepeated() {
     let hw = document.querySelectorAll(".highlighted-word");
     let has_class = [];
@@ -205,14 +123,29 @@ function loadTippyCDN(callback) {
 
 
 
-function initHL(theme, selector) {
-    const content = document.querySelector(selector)
+function initHL(theme) {
+    /*const selectors = [
+        '#main',
+        '.main',
+        'main',
+        '#article',
+        'article',
+        '#content',
+        '.content',
+        '#container',
+        '.container',
+        '[role="main"]'
+    ];*/
+    
+    const selectors = [
+        'body'
+    ]
 
-    if(typeof(tooltip_new_definitions) == 'object'){
-        tooltip_words_definitions = Object.assign(tooltip_words_definitions, tooltip_new_definitions);
-    }
+    const content = selectors.reduce((selected, selector) => {
+        return selected || document.querySelector(selector);
+    }, null) || document.body;
 
-    const wordsKeys = Object.keys(tooltip_words_definitions);
+    const wordsKeys = Object.keys(words);
     highlightTooltip(content, wordsKeys,theme);
 }
 
@@ -223,12 +156,8 @@ function rewriteTippyCss(font_size) {
             border-bottom: 2px dotted #383636;
             cursor: help;
         }
-        .tippy-box{
+        .tippy-box {
             font-size: ${font_size} !important;
-        }
-         .tippy_add{
-            color: #0000ff;
-            cursor: pointer;
         }
     `;
     document.head.appendChild(style);
@@ -253,26 +182,18 @@ function makeAliceThemeAvailable(){
 
 
 
-window.addEventListener('load', () => {
-    if(typeof tooltip_config === "undefined"){
-        tooltip_config = {
-            theme: 'default',
-            font_size: '18px'
+ window.addEventListener('load', () => {
+        if(typeof tooltip_config === "undefined"){
+             tooltip_config = {
+                theme: 'default',
+                font_size: '18px'
+            }
         }
-    }
+        rewriteTippyCss(tooltip_config.font_size);
+        makeLightThemeAvailable();
+        makeAliceThemeAvailable();
+        loadTippyCDN(() => {
+            initHL(tooltip_config.theme);
 
-    if(tooltip_config.font_size == null){
-        tooltip_config.font_size = '18px';
-    }
-    if(tooltip_config.target_element == null){
-        tooltip_config.target_element = 'body';
-    }
-
-    rewriteTippyCss(tooltip_config.font_size);
-    makeLightThemeAvailable();
-    makeAliceThemeAvailable();
-    loadTippyCDN(() => {
-        initHL(tooltip_config.theme, tooltip_config.target_element);
-
+        });
     });
-});

@@ -1,5 +1,10 @@
-# Tooltip para sites Conscienciológicos v2.0
-### Versão 2
+## Tooltip para sites Conscienciológicos
+
+Essa é a versão antigo do código, e está aqui apenas para consulta.
+
+Favor usar a versão mais recente: https://github.com/EliasPereirah/cdn_glossario_conscienciologico
+-----------------------------
+
 Esse script permite que você tenha em seu site a funcionalidade de tooltip que é uma caixa informativa com o significado de um termo.
 
 Esse script irá automaticamente importar um arquivo glossário de quase 500 definições de neologismos da Conscienciologia.
@@ -14,27 +19,11 @@ Caso queira mudar a cor da "caixinha" ou o tamanho da fonte basta adicionar <b>a
 ```html
 <script>
       var tooltip_config = {
-             theme: 'light', /* 'light' para branco, 'alice' para aliceblue ou 'default' para escuro */
+             theme: 'default', /* 'light' para branco, 'alice' para aliceblue ou 'default' para escuro */
              font_size: '18px'
          }
  </script>
 ```
-
-### Novas definições
-O arquivo termos_conscienciologicos.js já possui mais de 500 definições, mas caso queira adicionar novas definições 
-basta adicionar o seguinte script <b>antes</b> do script informado.
-
-```html
-<script>
-        var tooltip_new_definitions =
-            {
-                'palavrax' : 'Coloque a definição da palavraX aqui', 
-                'palavray' : 'Coloque a definição da palavraY aqui',
-                'projeção de mentalsoma' : 'Coloque a definição da projeção de mentalsoma aqui'
-            }
-    </script>
-```
-Confira a pasta exemplos
 
 ## CDN
 Esse script irá de forma automática importar mais três scripts disponibilizados em CDN.
@@ -68,7 +57,7 @@ Um exemplo de como ficaria:
    //.......
 ```
 
-Feito isso, tudo que precisará para funcionar é importar agora um único script em seu site, os outros serão importados de forma automática. Segue o exemplo.
+Feito isso tudo que precisará para funcionar é importar agora um único script em seu site, os outros serão importados de forma automática. Segue o exemplo.
 
 ```html
 <script src="https://seusite.com/tooltip_conscienciologico.js"></script>
@@ -79,14 +68,14 @@ O foco desse script é bem específico(sites conscienciológicos), outros sites 
 
 No entanto a lógica aqui poderá ser usada em qualquer outro site que deseje adicionar tooltips de forma mais automática possível, basta ter um arquivo JavaScript com array no seguinte formato:
 ```javascript
-tooltip_words_definitions = {
-"consciência":"Definição de consciência aqui",
-"ciência":"Definição de ciência aqui",
-"psicologia":"Definição de psicologia aqui"
+words = {
+"Consciência":"Definição de consciência aqui",
+"Amizade":"Definição de amizade aqui",
+"Filme Matrix":"Definição de filme Matrix aqui"
 }
 ```
 
-Se esse for o seu caso, irá precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
+Se assim desejar vai precisar modificar a seguinte parte  do código em [tooltip_conscienciologico.js](https://github.com/EliasPereirah/cdn_glossario_conscienciologico/blob/main/tooltip_conscienciologico.js) para:
 
 ```javascript
 function loadTippyCDN(callback) {
@@ -95,6 +84,6 @@ function loadTippyCDN(callback) {
         {src: 'https://unpkg.com/@popperjs/core@2', log: 'Popper.js loaded'},
         {src: 'https://unpkg.com/tippy.js@6', log: 'Tippy.js loaded'},
         {src: 'https://cdn.jsdelivr.net/gh/EliasPereirah/cdn_glossario_conscienciologico@main/termos_conscienciologicos.js', log: 'Glossary loaded'}
-        /// ^^^^^^^se esse for o caso substituia o último link com sua lista de definições seguindo o mesmo formato ^^^^^^^^^^^^^^^^^^^^^^ 
-    ];//....
+        /// mude isso ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+    ];
 ```
