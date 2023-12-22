@@ -1,4 +1,5 @@
 /**
+ * V2
  * Este script é uma ferramenta para adicionar caixas interativas com definições de termos Conscienciológicos
  * a qualquer site na internet.
  * Ele irá identificar os neologismos e adicionar uma caixa com o significado sempre o usuário passar o mouse sobre o
@@ -211,11 +212,9 @@ function initHL(theme, selector) {
         console.log('Tooltip não pode ser aplicado. Selector '+selector+' não existe na página');
         return false;
     }
-
     if(typeof(tooltip_new_definitions) == 'object'){
         tooltip_words_definitions = Object.assign(tooltip_words_definitions, tooltip_new_definitions);
     }
-
     const wordsKeys = Object.keys(tooltip_words_definitions);
     highlightTooltip(content, wordsKeys,theme);
 }
@@ -253,7 +252,6 @@ function makeAliceThemeAvailable(){
     style.innerHTML = alice_theme;
     document.head.appendChild(style);
 }
-
 
 
 
