@@ -207,6 +207,10 @@ function loadTippyCDN(callback) {
 
 function initHL(theme, selector) {
     const content = document.querySelector(selector)
+    if(content == null){
+        console.log('Tooltip não pode ser aplicado. Selector '+selector+' não existe na página');
+        return false;
+    }
 
     if(typeof(tooltip_new_definitions) == 'object'){
         tooltip_words_definitions = Object.assign(tooltip_words_definitions, tooltip_new_definitions);
