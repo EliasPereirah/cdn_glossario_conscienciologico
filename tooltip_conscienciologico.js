@@ -1,5 +1,5 @@
 /**
- * V2
+ * Version 2
  * Este script é uma ferramenta para adicionar caixas interativas com definições de termos Conscienciológicos
  * a qualquer site na internet.
  * Ele irá identificar os neologismos e adicionar uma caixa com o significado sempre o usuário passar o mouse sobre o
