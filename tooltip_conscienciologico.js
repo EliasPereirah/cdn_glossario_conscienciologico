@@ -267,7 +267,7 @@ function rewriteTippyCss(font_size) {
             font-weight: 500;
             float: right;
             position: absolute;
-            right: -12px;
+            right: 0px;
             top: 0;
             background-color: rgb(103 58 183);
         }
