@@ -268,7 +268,6 @@ function rewriteTippyCss(font_size) {
             float: right;
             position: absolute;
             right: 0px;
-            top: 0;
             background-color: rgb(103 58 183);
         }
         .close_tippy::before{
