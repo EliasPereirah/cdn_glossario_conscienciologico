@@ -79,8 +79,15 @@ function highlightTooltip(element, words_keys, theme) {
 
     const highlightedWords = document.getElementsByClassName("highlighted-word");
     let cnt;
+    let js_close = '<span class="close_tippy"></span>';
     for (const word of highlightedWords) {
         cnt = tooltip_words_definitions[word.innerText.trim().toLocaleLowerCase()];
+        if(screen.width <= 1024){
+            // mobile
+            if(cnt.length > 100){
+                cnt += " "+js_close;
+            }
+        }
         let wm = word.innerText.charAt(0).toUpperCase() +"<space></space>"+ word.innerText.slice(1);
         cnt = `<strong>${wm}:</strong> ${cnt}`;
         tippy(word, {
@@ -90,6 +97,14 @@ function highlightTooltip(element, words_keys, theme) {
             interactive: true,
             appendTo: document.body,
             allowHTML: true,
+            onShown: (instance)=>{
+                let close_me = instance.popper.querySelector('.close_tippy');
+                if(close_me){
+                    close_me.addEventListener('click', () => {
+                        instance.hide();
+                    });
+                }
+            },
              popperOptions: {
                     strategy: 'fixed',
                     modifiers: [
@@ -117,13 +132,26 @@ function highlightTooltip(element, words_keys, theme) {
 
 
 function addVer(ele){
+    let js_close = '<span class="close_tippy"></span>';
+    let cnt = tooltip_words_definitions[ele.innerText.toLowerCase()];
+    if(screen.width <= 1024 && cnt.length > 100){
+        cnt += " "+js_close;
+    }
     tippy(ele, {
-        content: tooltip_words_definitions[ele.innerText.toLowerCase()],
+        content: cnt,
         theme: 'light',
         trigger: 'mouseenter',
         interactive: true,
         appendTo: document.body,
         allowHTML: true,
+        onShown: (instance)=>{
+            let close_me = instance.popper.querySelector('.close_tippy');
+            if(close_me){
+                close_me.addEventListener('click', () => {
+                    instance.hide();
+                });
+            }
+        },
         popperOptions: {
             strategy: 'fixed',
             modifiers: [
@@ -231,6 +259,21 @@ function rewriteTippyCss(font_size) {
             color: #0000ff;
             cursor: pointer;
         }
+         .close_tippy{
+            color: #fff;
+            border-radius: 2px;
+            padding: 1px 4px;
+            font-family: serif;
+            font-weight: 500;
+            float: right;
+            position: absolute;
+            right: -12px;
+            top: 0;
+            background-color: rgb(103 58 183);
+        }
+        .close_tippy::before{
+            content: 'X';
+        }
     `;
     document.head.appendChild(style);
 }
@@ -273,6 +316,5 @@ window.addEventListener('load', () => {
     makeAliceThemeAvailable();
     loadTippyCDN(() => {
         initHL(tooltip_config.theme, tooltip_config.target_element);
-
     });
 });
