@@ -84,7 +84,7 @@ function highlightTooltip(element, words_keys, theme) {
         cnt = tooltip_words_definitions[word.innerText.trim().toLocaleLowerCase()];
         if(screen.width <= 1024){
             // mobile
-            if(cnt.length > 100){
+            if(cnt.search(/tippy_add/) === -1){
                 cnt += " "+js_close;
             }
         }
@@ -134,8 +134,8 @@ function highlightTooltip(element, words_keys, theme) {
 function addVer(ele){
     let js_close = '<span class="close_tippy"></span>';
     let cnt = tooltip_words_definitions[ele.innerText.toLowerCase()];
-    if(screen.width <= 1024 && cnt.length > 100){
-        cnt += " "+js_close;
+    if(screen.width <= 1024){
+            cnt += " "+js_close;
     }
     tippy(ele, {
         content: cnt,
