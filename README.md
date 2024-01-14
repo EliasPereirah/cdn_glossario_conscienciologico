@@ -15,7 +15,8 @@ Caso queira mudar a cor da "caixinha" ou o tamanho da fonte basta adicionar <b>a
 <script>
       var tooltip_config = {
              theme: 'light', /* 'light' para branco, 'alice' para aliceblue ou 'default' para escuro */
-             font_size: '18px'
+             font_size: '18px',
+             target_element: 'body' /* tag HTML ao qual será aplicado, default é body */
          }
  </script>
 ```
